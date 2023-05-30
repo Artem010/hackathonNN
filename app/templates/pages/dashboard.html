@@ -264,26 +264,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="card">
-                                        <div class="content">
-                                            <div class="head">
-                                                <h5 class="mb-0">Traffic Overview</h5>
-                                                <p class="text-muted">Current year website visitor data</p>
-                                            </div>
+                                        <div class="card-header">Radar Chart</div>
+                                        <div class="card-body">
+                                            <p class="card-title"></p>
                                             <div class="canvas-wrapper">
-                                                <canvas class="chart" id="trafficflow"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="content">
-                                            <div class="head">
-                                                <h5 class="mb-0">Sales Overview</h5>
-                                                <p class="text-muted">Current year sales data</p>
-                                            </div>
-                                            <div class="canvas-wrapper">
-                                                <canvas class="chart" id="sales"></canvas>
+                                                <canvas class="chart" id="radarchart"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -476,8 +461,9 @@
     <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="{% static 'assets/vendor/chartsjs/Chart.min.js' %}"></script>
-    <script src="{% static 'assets/js/dashboard-charts.js' %}"></script>
+    <script src="{% static 'assets/js/charts.js' %}"></script>
     <script src="{% static 'assets/js/script.js' %}"></script>
+
 </body>
 
 </html>
