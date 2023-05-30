@@ -4,30 +4,49 @@ var chart2 = document.getElementById('barchart')
 var myChart2 = new Chart(chart2, {
 type: 'bar',
 data: {
-    labels: ['Экономика', 'Программирование', 'Машинное обучение', 'Математический анализ', 'Алгоритмы и структуры данных'],
+    labels: ['Распределение'],
     datasets: [{
-            label: 'Income',
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-              'rgba(255, 205, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(201, 203, 207, 0.2)'
-            ],
+            label: 'Экономика',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: [
               'rgb(255, 99, 132)',
-              'rgb(255, 159, 64)',
-              'rgb(255, 205, 86)',
-              'rgb(75, 192, 192)',
-              'rgb(54, 162, 235)',
-              'rgb(153, 102, 255)',
-              'rgb(201, 203, 207)'
             ],
             borderWidth: 1,
-            data: ["4", "5", "4", "3", "4", "5", "5"],
-        }]
+            data: "4",
+        }, {
+            label: 'Программирование',
+            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+            borderColor: [
+              'rgb(255, 159, 64)',
+            ],
+            borderWidth: 1,
+            data: "5",
+        }, {
+            label: 'Машинное обучение',
+            backgroundColor: 'rgba(255, 205, 86, 0.2)',
+            borderColor: [
+              'rgb(255, 205, 86)',
+            ],
+            borderWidth: 1,
+            data: "3",
+        }, {
+            label: 'Математический анализ',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: [
+              'rgb(75, 192, 192)',
+            ],
+            borderWidth: 1,
+            data: "4",
+        }, {
+            label: 'Алгоритмы и структуры данных',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: [
+              'rgb(54, 162, 235)',
+            ],
+            borderWidth: 1,
+            data: "4",
+        }
+        ]
 },
 options: {
     animation: {
@@ -41,7 +60,7 @@ options: {
         },
         title: {
             display: true,
-            text: 'Revenue',
+            text: 'Оценка',
             position: 'left',
         },
     },
