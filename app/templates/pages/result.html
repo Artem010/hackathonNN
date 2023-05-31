@@ -89,13 +89,12 @@
                 <div class="col-md-4">
                     {% if score == max_score%}
                         <div class="alert alert-success">
-                            <h5 class="alert-title">Успех</h5>
-                            Ваш результат {{score}} из {{max_score}}
+                            <h5 class="alert-title">Ваш результат {{score}} из {{max_score}}</h5>
                         </div>
                     {% else %}
                         <div class="alert alert-danger">
-                            <h5 class="alert-title">Попробуйте ещё раз</h5>
-                            Ваш результат {{score}} из {{max_score}}
+                            <h5 class="alert-title">Ваш результат {{score}} из {{max_score}}</h5>
+                            Вам подобраны новые задания. Ознакомьтесь с решением и пройдите тест ещё раз
                         </div>
                     {% endif %}
                 </div>
@@ -114,7 +113,13 @@
             {% endfor %}
 
             <div class="row">
-                <a href="/" style="margin: auto; width: 200px;" class="btn btn-success mt-4 mb-2">Отправить результаты</a>
+                {% if score == max_score%}
+                    <a href="/" style="margin: auto; width: 200px;" class="btn btn-success mt-4 mb-2">Завершить</a>
+                {% if score == max_score%}
+                {% else %}
+                    <a href="/testing?round=2" style="margin: auto; width: 200px;" class="btn btn-success mt-4 mb-2">Пройти ещё раз</a>
+                {% endif %}
+
             </div>
         </div>
     </div>

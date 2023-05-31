@@ -160,7 +160,6 @@ def testing(request):
     if request.method == "POST":
         incorrect_list = []
         score = 0
-        print(request.POST)
         for q in questions:
             if str(q['id']) in request.POST:
                 if request.POST[str(q['id'])] == q['answers'][0]:
@@ -183,6 +182,95 @@ def testing(request):
                     })
 
         return render(request, 'pages/result.html', context={'score': score, 'max_score': len(questions), 'inccorect': incorrect_questions })
+    if request.method == "GET" and 'round' in request.GET:
+        questions_round2 = [
+            {
+                'id': 6,
+                'question': '''1. Какое уравнение задает параболу?''',
+                'answers': [
+                    '\(y = x^2\)',
+                    '''\(y = x^3\)''',
+                    '\(y = \sqrt{x}\)',
+                    '\(y = \\frac{1}{x}\)'
+                ],
+                'solution': """<ol type="a">
+  <li>\(y = x^3\)</li>
+  <li>\(y = \sqrt{x}\)</li>
+  <li>\(y = \\frac{1}{x}\)</li>
+  <li>\(y = x^2\)</li>
+</ol>"""
+            },
+            {
+                'id': 7,
+                'question': '''2. Какой будет производная функции \(f(x) = \ln(x^2 + 1)\)?''',
+                'answers': [
+                    '\(\\frac{2x}{\ln(x)}\)',
+                    '\(\\frac{2x}{x^2 + 1}\) ',
+                    '\(\\frac{2x}{\ln(x^2 + 1)}\)',
+                    '\(\\frac{2x}{x}\)'
+                ],
+                'solution': """<ol type="a">
+  <li>\(\\frac{2x}{x^2 + 1}\)</li>
+  <li>\(\\frac{2x}{\ln(x^2 + 1)}\)</li>
+  <li>\(\\frac{2x}{x}\)</li>
+  <li>\(\\frac{2x}{\ln(x)}\)</li>
+</ol>"""
+            },
+            {
+                'id': 8,
+                'question': '''3. Чему равен интеграл \(\int_0^{\pi/2} \cos^3(x) \,dx\)?''',
+                'answers': [
+                    '\(\\frac{\pi}{2}\)',
+                    '\(\\frac{1}{4}\)',
+                    '\(\\frac{\pi}{4}\)',
+                    '\(\\frac{\pi}{3}\)'
+
+                ],
+                'solution': """<ol type="a">
+  <li>\(\\frac{1}{4}\)</li>
+  <li>\(\\frac{\pi}{4}\)</li>
+  <li>\(\\frac{\pi}{3}\)</li>
+  <li>\(\\frac{\pi}{2}\)</li>
+</ol>"""
+            },
+            {
+                'id': 9,
+                'question': '''4. Какое число является корнем уравнения \(2x^2 + 3x - 2 = 0\)?''',
+                'answers': [
+                    '2',
+                    '-2',
+                    '-1',
+                    '\(\\frac{1}{2}\)',
+
+                ],
+                'solution': """<ol type="a">
+  <li>-2</li>
+  <li>-1</li>
+  <li>\(\\frac{1}{2}\)</li>
+  <li>2</li>
+</ol>"""
+            },{
+                'id': 10,
+                'question': '''5. Какой предел существует: \(\lim_{{x \to 0}} \frac{{\sin(x)}}{{x}}\)?''',
+                'answers': [
+                    '0',
+                    '1',
+                    '\(\infty\)',
+                    'не существует'
+                ],
+                'solution': """<ol type="a">
+  <li>0</li>
+  <li>1</li>
+  <li>\(\infty\)</li>
+  <li>не существует</li>
+</ol>"""
+            }
+        ]
+
+        for q in questions_round2:
+            random.shuffle(q['answers'])
+        theme = 'Интегралы круг 2'
+        return render(request, 'pages/testing.html', context={'context': questions, 'theme': theme})
 
     for q in questions:
         random.shuffle(q['answers'])
