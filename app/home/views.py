@@ -8,9 +8,9 @@ def dashboard(request):
     # Page from the theme
     return render(request, 'pages/dashboard.html')
 
-def charts(request):
+def courses(request):
     # Page from the theme
-    return render(request, 'pages/charts.html')
+    return render(request, 'pages/courses.html')
 
 def testing(request):
 
